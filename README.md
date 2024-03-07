@@ -17,7 +17,7 @@ class Point:
     def distance_to(self, other_point):
         x1, y1 = self._x_coord, self._y_coord
         x2, y2 = other_point.get_x_coord(), other_point.get_y_coord()
-        distance = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+        distance = ((x2 - x1) ** + (y2 - y1)**) **
         return distance
 
 
@@ -38,7 +38,7 @@ class LineSegment:
     def is_parallel_to(self, other_line_segment):
         slope1 = self.slope()
         slope2 = other_line_segment.slope()
-        return abs(slope1 - slope2) < 0.000001
+        return abs(slope1 - slope2)
 
     def slope(self):
         x1, y1 = self._endpoint_1.get_x_coord(), self._endpoint_1.get_y_coord()
@@ -49,17 +49,3 @@ class LineSegment:
             return float('inf')
         else:
             return (y2 - y1) / (x2 - x1)
-
-    "'Example usage'"
-    point_1 = Point(7, 4)
-    point_2 = Point(-6, 18)
-    print(point_1.distance_to(point_2))
-
-    line_seg_1 = LineSegment(point_1, point_2)
-    print(line_seg_1.length())
-    print(line_seg_1.slope())
-
-    point_3 = Point(-2, 2)
-    point_4 = Point(24, 12)
-    line_seg_2 = LineSegment(point_3, point_4)
-    print(line_seg_1.is_parallel_to(line_seg_2))
